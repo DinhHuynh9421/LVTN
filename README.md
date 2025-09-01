@@ -4,8 +4,6 @@
 
 Mô hình cốt lõi được sử dụng là **SASRec (Self-Attentive Sequential Recommendation)**, một kiến trúc hiện đại dựa trên cơ chế tự chú ý của Transformer.
 
-![Demo Giao diện](link_den_anh_demo_cua_ban.png)
-*(Bạn nên chụp một ảnh màn hình web demo của bạn và tải lên repo, sau đó thay link vào đây)*
 
 ---
 ## Mục lục
