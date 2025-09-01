@@ -1,0 +1,16 @@
+{% extends "layout.html" %}
+
+{% block content %}
+<h1>Danh sách sản phẩm</h1>
+<div class="product-list">
+    {% for product in products %}
+    <div class="product-card">
+        <a href="{{ url_for('product_detail', product_id=product.id) }}">
+            <img src="{{ url_for('static', filename='images/' + product.image) }}" alt="{{ product.name }}">
+            <h3>{{ product.name }}</h3>
+            <p class="price">{{ "{:,.0f} VND".format(product.price) }}</p>
+        </a>
+    </div>
+    {% endfor %}
+</div>
+{% endblock %}

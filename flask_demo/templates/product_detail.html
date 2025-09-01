@@ -1,0 +1,32 @@
+
+{% extends "layout.html" %}
+
+{% block content %}
+<div class="product-detail">
+    <div class="product-main">
+        <img src="{{ url_for('static', filename='images/' + product.image) }}" alt="{{ product.name }}">
+        <div class="product-info">
+            <h1>{{ product.name }}</h1>
+            <p class="price">{{ "{:,.0f} VND".format(product.price) }}</p>
+            <p class="description">{{ product.description }}</p>
+        </div>
+    </div>
+</div>
+
+{% if recommended %}
+<div class="recommendations">
+    <h2>Có thể bạn sẽ thích</h2>
+    <div class="recommended-list">
+        {% for rec_product in recommended %}
+        <div class="product-card">
+            <a href="{{ url_for('product_detail', product_id=rec_product.id) }}">
+                <img src="{{ url_for('static', filename='images/' + rec_product.image) }}" alt="{{ rec_product.name }}">
+                <h3>{{ rec_product.name }}</h3>
+                <p class="price">{{ "{:,.0f} VND".format(rec_product.price) }}</p>
+            </a>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+{% endif %}
+{% endblock %}
